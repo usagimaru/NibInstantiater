@@ -7,7 +7,7 @@ A collection of extensions useful for initialization from Nib and Storyboard.
 
 ## Usage
 
-```
+```swift
 // Class definition.
 class MyCustomView: NSView, NibInstantiatable {
 	//...
