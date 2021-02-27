@@ -25,7 +25,7 @@ public protocol NibInstantiatable: View {
 	static func nib(in bundle: Bundle?) -> Nib
 	
 	func loadOwnedNib(_ bundle: Bundle?)
-	static func loadUnwnedNib(_ bundle: Bundle?) -> Self
+	static func loadUnownedNib(_ bundle: Bundle?) -> Self
 	
 	func didViewLoadedFromNib()
 
