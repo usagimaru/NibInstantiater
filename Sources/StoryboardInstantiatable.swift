@@ -1,8 +1,8 @@
 //
-//  NSViewController.swift
+//  StoryboardInstantiatable.swift
 //
 //  Created by Satori Maru on 17.05.15.
-//  Copyright © 2017年 usagimaru. All rights reserved.
+//  Copyright © 2017 usagimaru.
 //
 
 #if os(macOS)
