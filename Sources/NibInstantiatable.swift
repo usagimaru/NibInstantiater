@@ -92,8 +92,8 @@ public extension NibInstantiatable {
 	}
 	
 	/// nib からロード（nib のビューにビュークラスを直接適用している場合／File’s Owner = nil）
-	static func loadUnownedNib(_ bundle: Bundle? = nil) -> Self {
-		let view: Self = Self.loadNib(bundle: bundle, filesOwner: nil)
+	static func loadUnownedNib(_ bundle: Bundle? = nil, filesOwner: Any? = nil) -> Self {
+		let view: Self = Self.loadNib(bundle: bundle, filesOwner: filesOwner)
 		view.didViewLoadedFromNib()
 		return view
 	}
