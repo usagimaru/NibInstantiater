@@ -11,7 +11,7 @@ import Cocoa
 import UIKit
 #endif
 
-public protocol StoryboardInstantiatable: class {
+public protocol StoryboardInstantiatable: AnyObject {
 	
 	/*
 	// To customize the Storyboard name...
