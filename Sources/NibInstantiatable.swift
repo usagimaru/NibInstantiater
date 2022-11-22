@@ -49,14 +49,15 @@ public extension NibInstantiatable {
 		contentView.translatesAutoresizingMaskIntoConstraints = false
 		addSubview(contentView)
 		
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[contentView]-0-|",
-													  options: NSLayoutConstraint.FormatOptions(),
-													  metrics: nil,
-													  views: ["contentView" : contentView]))
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[contentView]-0-|",
-													  options: NSLayoutConstraint.FormatOptions(),
-													  metrics: nil,
-													  views: ["contentView" : contentView]))
+		let constraints = [
+			NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[v]-0-|",
+										   metrics: nil,
+										   views: ["v" : contentView]),
+			NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[v]-0-|",
+										   metrics: nil,
+										   views: ["v" : contentView])
+		].flatMap { $0 }
+		NSLayoutConstraint.activate(constraints)
 	}
 	
 	private static func loadNib<T>(bundle: Bundle?, filesOwner: Any?) -> T {
