@@ -27,7 +27,7 @@ public protocol NibInstantiatable: View {
 	func loadOwnedNib(_ bundle: Bundle?)
 	static func loadUnownedNib(_ bundle: Bundle?, filesOwner: Any?) -> Self
 	
-	func didViewLoadedFromNib()
+	func viewLoadedFromNib()
 
 }
 
@@ -89,17 +89,17 @@ public extension NibInstantiatable {
 	func loadOwnedNib(_ bundle: Bundle? = nil) {
 		let view: View = Self.loadNib(bundle: bundle, filesOwner: self)
 		setNibLoadedView(view)
-		didViewLoadedFromNib()
+		viewLoadedFromNib()
 	}
 	
 	/// nib からロード（nib のビューにビュークラスを直接適用している場合／File’s Owner = nil）
 	static func loadUnownedNib(_ bundle: Bundle? = nil, filesOwner: Any? = nil) -> Self {
 		let view: Self = Self.loadNib(bundle: bundle, filesOwner: filesOwner)
-		view.didViewLoadedFromNib()
+		view.viewLoadedFromNib()
 		return view
 	}
 	
-	func didViewLoadedFromNib() {
+	func viewLoadedFromNib() {
 		// Implement on subclasses if needed.
 	}
 
